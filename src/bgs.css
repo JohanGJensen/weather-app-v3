@@ -1,0 +1,31 @@
+/* --- drop shadow --- */
+
+.shadows {
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Weather --- */
+
+.sunny-bg {
+  background: #cac531;
+  background: -webkit-linear-gradient(45deg, #cac531, #f3f9a7);
+  background: linear-gradient(45deg, #cac531, #f3f9a7);
+}
+
+.rain-bg {
+    background: #36D1DC;
+    background: -webkit-linear-gradient(45deg, #4689A5, #A5DCF3);
+    background: linear-gradient(45deg, #4689A5, #A5DCF3);
+}
+
+.cloud-bg {
+  background: #36D1DC;
+  background: -webkit-linear-gradient(45deg, #808080, #CFCCCC);
+  background: linear-gradient(45deg, #808080, #CFCCCC);
+}
+
+.wind-bg {
+  background: #36D1DC;
+  background: -webkit-linear-gradient(45deg, #266680, #4BB6E4);
+  background: linear-gradient(45deg, #266680, #4BB6E4);
+}
