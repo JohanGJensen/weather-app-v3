@@ -19,21 +19,31 @@ class HeaderNav extends Component {
     this.setState({ city: e.target.value });
   };
 
-  handleSubmit = (dispatch) => {
-        dispatch({ type: "ADD_CITY", payload: this.state.city.toLowerCase() });
-        this.setState({ city: "" });
- 
+  handleSubmit = (dispatch, cityList) => {
+    if (this.state.city === "") {
+      alert("empty input!");
+    } else if (
+      cityList.find(
+        cities => cities.toLowerCase() === this.state.city.toLowerCase()
+      )
+    ) {
+      console.log("city is already added!");
+      this.setState({ city: "" });
+    } else {
+      dispatch({ type: "ADD_CITY", payload: this.state.city.toLowerCase() });
+      this.setState({ city: "" });
+    }
   };
 
   handleCity = (dispatch, activateFetch, e) => {
     dispatch({ type: "CHANGE_CITY", payload: e.target.value });
     activateFetch(e.target.value);
+    localStorage.setItem("city", JSON.stringify(e.target.value));
   };
 
-  handleDelete = (dispatch, cityList, e) => {
-    console.log(e.target.value)
-    dispatch({type: "DELETE_CITY", payload: e.target.value})
-  }
+  handleDelete = (dispatch, e) => {
+    dispatch({ type: "DELETE_CITY", payload: e.target.value });
+  };
 
   render() {
     return (
@@ -74,7 +84,7 @@ class HeaderNav extends Component {
                   />
                   <button
                     className="city-list-button"
-                    onClick={this.handleSubmit.bind(this, dispatch)}
+                    onClick={this.handleSubmit.bind(this, dispatch, cityList)}
                   >
                     ADD CITY!
                   </button>
@@ -92,7 +102,13 @@ class HeaderNav extends Component {
                         >
                           {e}
                         </button>
-                        <button value={e} onClick={this.handleDelete.bind(this, dispatch, cityList)} className="delete-btn">X</button>
+                        <button
+                          value={e}
+                          onClick={this.handleDelete.bind(this, dispatch)}
+                          className="delete-btn"
+                        >
+                          X
+                        </button>
                       </li>
                     ))}
                   </ul>

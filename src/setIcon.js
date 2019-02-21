@@ -1,97 +1,90 @@
-import Rain from "./icons/u00n.png";
-import Sun from "./icons/c01d.png";
-import Thunder from "./icons/t05d.png";
-import Wind from "./icons/s05n.png";
-import Snow from "./icons/s06n.png";
-import Cloud from "./icons/c04d.png";
-
 export default function setIcon(e) {
   switch (e) {
     //Thunderstorms
     case "Thunderstorm with light rain":
-      return Thunder;
+      return "bolt";
     case "Thunderstorm with rain":
-    return Thunder;
+      return "bolt";
     case "Thunderstorm with heavy rain":
-    return Thunder;
+      return "bolt";
     case "Thunderstorm with light drizzle":
-    return Thunder;
+      return "bolt";
     case "Thunderstorm with drizzle":
-    return Thunder;
+      return "bolt";
     case "Thunderstorm with heavy drizzle":
-    return Thunder;
+      return "bolt";
     case "Thunderstorm with Hail":
-    return Thunder;
+      return "bolt";
     //Rain
     case "Light Drizzle":
-      return Rain;
+      return "cloud-rain";
     case "Drizzle":
-    return Rain;
+      return "cloud-rain";
     case "Heavy Drizzle":
-    return Rain;
+      return "cloud-rain";
     case "Light rain":
-    return Rain;
+      return "cloud-rain";
     case "Moderate Rain":
-    return Rain;
+      return "cloud-rain";
     case "Heavy Rain":
-    return Rain;
+      return "cloud-rain";
     case "Freezing rain":
-    return Rain;
+      return "cloud-rain";
     case "Light shower rain":
-    return Rain;
+      return "cloud-rain";
     case "Shower rain":
-    return Rain;
+      return "cloud-rain";
     case "Heavy shower rain":
-    return Rain;
+      return "cloud-rain";
     //Snow
     case "Light snow":
-    return Snow;
+      return "snowflake";
     case "Snow":
-    return Snow;
+      return "snowflake";
     case "Heavy Snow":
-    return Snow;
+      return "snowflake";
     case "Mix snow/rain":
-    return Snow;
+      return "snowflake";
     //wind
     case "Sleet":
-      return Wind;
+      return "wind";
     case "Heavy sleet":
-    return Wind;
+      return "wind";
     case "Snow shower":
-    return Wind;
+      return "wind";
     case "Heavy snow shower	":
-    return Wind;
+      return "wind";
     case "Flurries":
-    return Wind;
+      return "wind";
     case "Mist":
-    return Wind;
+      return "wind";
     case "Smoke":
-    return Wind;
+      return "wind";
     case "Haze":
-    return Wind;
+      return "wind";
     case "Sand/dust":
-    return Wind;
+      return "wind";
     case "Fog":
-    return Wind;
+      return "wind";
     case "Freezing Fog":
-    return Wind;
+      return "wind";
     //clear sky
     case "Clear sky":
-      return Sun;
+      return "sun";
     //misc
     case "Few clouds":
-      return Cloud;
+      return "cloud";
     case "Scattered clouds":
-    return Cloud;
+      return "cloud";
     case "Broken clouds":
-    return Cloud;
+      return "cloud";
     case "Overcast clouds":
-    return Cloud;
+      return "cloud";
     case "Unknown Precipitation":
-    return Cloud;
+      return "cloud";
     //
     default:
-      return Sun;
+      return "sun";
     //
   }
-};
+}

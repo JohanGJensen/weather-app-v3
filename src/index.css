@@ -29,7 +29,7 @@ h1 {
 
 .burger-btn {
   display: block;
-  z-index:10;
+  z-index: 10;
 }
 
 .bar1,
@@ -86,7 +86,7 @@ h1 {
   font-size: 1.5em;
   background: none;
   border: none;
-  color: #f35b5b;
+  color: #4887a2;
   cursor: pointer;
 }
 
@@ -104,7 +104,7 @@ h1 {
 .city-list-item:focus {
   outline: none;
   border: none;
-  background: #4887A2;
+  background: #4887a2;
   color: #fff;
 
   font-size: 35px;
@@ -117,7 +117,7 @@ h1 {
   height: 30px;
 
   border: none;
-  background: #4887A2;
+  background: #4887a2;
   color: #fff;
   font-size: 15px;
 }
@@ -125,8 +125,8 @@ h1 {
 .city-list-input {
   margin: 0 5px;
   border: none;
-  border-bottom: solid 2px #8B8B8B;
-  color: #8B8B8B;
+  border-bottom: solid 2px #8b8b8b;
+  color: #8b8b8b;
   font-size: 20px;
 
   background: none;
@@ -137,7 +137,7 @@ h1 {
 }
 .city-list-input:focus {
   outline: none;
-  border-bottom: solid 2px #4887A2;
+  border-bottom: solid 2px #4887a2;
 
   transition: all 0.2s;
 }
@@ -151,7 +151,7 @@ h1 {
 
   width: 100%;
   height: 100%;
-  background: #4D4D4D;
+  background: #4d4d4d;
 
   transition: all 0.4s;
 }
@@ -183,7 +183,12 @@ h2 {
   color: #fff;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: normal;
 }
 
@@ -274,6 +279,7 @@ h5 {
 .week-container {
   width: 88%;
   margin: 24px auto 0;
+  padding: 0 0 5px;
   overflow: scroll;
 
   display: flex;
@@ -357,6 +363,6 @@ h5 {
     outline: 2px solid #f35b5b;
     outline-offset: -2px;
 
-    transition: .3s all;
+    transition: 0.3s all;
   }
 }

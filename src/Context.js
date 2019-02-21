@@ -34,11 +34,20 @@ export class Provider extends React.Component {
     hours: [],
     week: [],
     dispatch: action => this.setState(state => reducer(state, action)),
-    activateFetch: (e) => {const cityInfo = e; this.runFetch(cityInfo)}
+    activateFetch: e => {
+      const cityInfo = e;
+      this.runFetch(cityInfo);
+    }
   };
 
   componentDidMount() {
-    this.state.activateFetch(this.state.city);
+    if (localStorage.getItem("city") === null) {
+      this.state.activateFetch(this.state.city);
+    } else {
+      const cityRef = JSON.parse(localStorage.getItem("city"));
+
+      this.state.activateFetch(cityRef);
+    }
   }
 
   componentDidUpdate() {
@@ -46,20 +55,24 @@ export class Provider extends React.Component {
     localStorage.setItem("cityList", JSON.stringify(cityList));
   }
 
-  runFetch = (currentCity) => {
+  runFetch = currentCity => {
     if (localStorage.getItem("cityList") === null) {
-      this.setState({cityList: [this.state.city]});
+      this.setState({ cityList: [this.state.city] });
     } else {
-    let value = localStorage.getItem("cityList");
-    value = JSON.parse(value);
+      let value = localStorage.getItem("cityList");
+      value = JSON.parse(value);
 
-    this.setState({ cityList: value });
+      this.setState({ cityList: value });
     }
 
     const { key, city } = this.state;
 
     //Fetching daily forecast.
-    fetch(`https://api.weatherbit.io/v2.0/current?city=${currentCity !== null ? currentCity : city}&key=${key}`)
+    fetch(
+      `https://api.weatherbit.io/v2.0/current?city=${
+        currentCity !== null ? currentCity : city
+      }&key=${key}`
+    )
       .then(res => {
         return res.json();
       })
@@ -73,7 +86,9 @@ export class Provider extends React.Component {
 
     //Fetching hourly forecast (every 3 hours)
     fetch(
-      `https://api.weatherbit.io/v2.0/forecast/3hourly?city=${currentCity = null ? currentCity : city}&key=${key}`
+      `https://api.weatherbit.io/v2.0/forecast/3hourly?city=${(currentCity = null
+        ? currentCity
+        : city)}&key=${key}`
     )
       .then(res => {
         return res.json();
@@ -88,7 +103,9 @@ export class Provider extends React.Component {
 
     //Fetching 5 day forecast
     fetch(
-      `https://api.weatherbit.io/v2.0/forecast/daily?city=${currentCity = null ? currentCity : city}&key=${key}`
+      `https://api.weatherbit.io/v2.0/forecast/daily?city=${(currentCity = null
+        ? currentCity
+        : city)}&key=${key}`
     )
       .then(res => {
         return res.json();
@@ -100,7 +117,7 @@ export class Provider extends React.Component {
           this.setState({ week: [...this.state.week, daily[i]] });
         }
       });
-  }
+  };
 
   render() {
     return (

@@ -13,10 +13,21 @@ import {
   faSun,
   faCloud,
   faCloudRain,
-  faWind
+  faWind,
+  faSnowflake,
+  faBolt,
+  faTrashAlt
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faSun, faCloud, faCloudRain, faWind);
+library.add(
+  faSun,
+  faCloud,
+  faCloudRain,
+  faWind,
+  faSnowflake,
+  faBolt,
+  faTrashAlt
+);
 
 class App extends Component {
   render() {
